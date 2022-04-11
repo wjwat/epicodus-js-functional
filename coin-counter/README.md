@@ -17,10 +17,10 @@
 
 ## Speed Tests
 
-| ------------------------------------- | ------ |
-|           **Number of calls per run** | 100000 |
-|     **Number of values in each call** | 10000  |
-| ------------------------------------- | ------ |
+
+**Number of calls per run**: 100000
+
+**Number of values in each call**: 10000
 
 
 |        | recursiveCounter    | closureCounter      | plainCounter        |
