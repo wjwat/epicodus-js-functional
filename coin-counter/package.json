@@ -5,7 +5,8 @@
   "main": "coin-counter.js",
   "type": "module",
   "scripts": {
-    "test": "jest --coverage"
+    "test": "jest --coverage",
+    "speed": "node coin-counter.speed.js"
   },
   "author": "Will W. <wjwat@onionslice.org> (https://github.com/wjwat)",
   "license": "MIT",

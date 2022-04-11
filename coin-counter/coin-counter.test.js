@@ -1,3 +1,4 @@
+/* eslint-disable fp/no-unused-expression,fp/no-nil */
 import { recursiveCounter, countCoins, closureCounter, closureCountCoins, plainCounter } from "./coin-counter";
 
 describe('countCoins', () => {
@@ -21,10 +22,10 @@ describe('recursiveCounter', () => {
 });
 
 describe('closureCountCoins', () => {
-  const quarter = closureCountCoins(25),
-        dime = closureCountCoins(10),
-        nickel = closureCountCoins(5),
-        penny = closureCountCoins(1);
+  const quarter = closureCountCoins(25);
+  const dime = closureCountCoins(10);
+  const nickel = closureCountCoins(5);
+  const penny = closureCountCoins(1);
 
   test('Returns the number of coins of a given value that are less than the first value', () => {
     expect(quarter(99)).toEqual(3);

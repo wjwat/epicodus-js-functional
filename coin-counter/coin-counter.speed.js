@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { recursiveCounter, closureCounter, plainCounter } from "./coin-counter.js";
 import { values } from './coin-counter.speed.values.js';
 

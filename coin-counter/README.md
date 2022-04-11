@@ -1,5 +1,19 @@
 # Coin Counter
 
+Each function accepts an integer and returns an array of integer values that
+correspond to quarters, dimes, nickels, and pennies in that order.
+
+Ex:
+```
+> plainCounter(99)
+ [
+   3, // quarters
+   2, // dimes
+   0, // nickels
+   4 // pennies
+ ]
+```
+
 * **recursiveCounter** - Written using recursion.
 * **closureCounter** - Written using closures.
 * **plainCounter** - Written using straightforward division.
@@ -16,7 +30,6 @@
     * Tests should be expanded to handle nonsense values.
 
 ## Speed Tests
-
 
 **Number of calls per run**: 100000
 
