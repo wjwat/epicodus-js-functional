@@ -1,17 +1,6 @@
 /* eslint-disable */
-import { recursiveCounter, closureCounter, plainCounter, notSoQuickCounter } from "./coin-counter.js";
+import { recursiveCounter, closureCounter, plainCounter, notSoQuickCounterObj, notSoQuickCounterArr } from "./coin-counter.js";
 import { values } from './coin-counter.speed.values.js';
-
-// Use this to gen your values and pipe the output to `coin-counter.speed.values.js`
-// const genValues = () => {
-//   const getRandomIntInclusive = (min, max) => {
-//     min = Math.ceil(min);
-//     max = Math.floor(max);
-//     return Math.floor(Math.random() * (max - min + 1) + min);
-//   }
-//   const values = Array.from({length: 10000}, () => getRandomIntInclusive(1, 99));
-//   console.log(JSON.stringify(values));
-// }
 
 const runIt = (func, count) => {
   for (let i = 0; i < 5; i++) {
@@ -34,19 +23,27 @@ const runIt = (func, count) => {
   return times;
 }
 
-const COUNT = 100000;
-const t1 = runIt(recursiveCounter, COUNT);
-const t2 = runIt(closureCounter, COUNT);
-const t3 = runIt(plainCounter, COUNT);
-const t4 = runIt(notSoQuickCounter, COUNT);
+const main = (count, funcs) => {
 
-console.log(`
-Number of calls: ${COUNT}
-Number of values in each call: ${values.length}
-Average time for each call:
+  console.log(`Number of calls: ${count}`);
+  console.log(`Number of values in each call: ${values.length}`);
+  console.log('Average time for each call:\n');
 
-  recursiveCounter: ${t1.reduce((p, c) => p + c, 0) / COUNT}
-    closureCounter: ${t2.reduce((p, c) => p + c, 0) / COUNT}
-      plainCounter: ${t3.reduce((p, c) => p + c, 0) / COUNT}
- notSoQuickCounter: ${t4.reduce((p, c) => p + c, 0) / COUNT}
-`);
+  funcs.forEach(f => {
+    const time = runIt(f, count);
+    const average = time.reduce((p, c) => p + c, 0) / count;
+
+    console.log(`${f.name}`.padStart(40) + `: ${average}`);
+  });
+};
+
+const COUNT = 10000;
+const FUNCS = [
+  recursiveCounter,
+  closureCounter,
+  plainCounter,
+  notSoQuickCounterObj,
+  notSoQuickCounterArr
+]
+
+main(COUNT, FUNCS);

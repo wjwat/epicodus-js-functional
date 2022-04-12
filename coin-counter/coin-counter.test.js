@@ -1,5 +1,5 @@
 /* eslint-disable fp/no-unused-expression,fp/no-nil */
-import { recursiveCounter, countCoins, closureCounter, closureCountCoins, plainCounter } from "./coin-counter";
+import { recursiveCounter, countCoins, closureCounter, closureCountCoins, plainCounter, notSoQuickCounterArr, notSoQuickCounterObj } from "./coin-counter";
 
 describe('countCoins', () => {
   test('Returns the number of coins of a given value that are less than the first value', () => {
@@ -54,5 +54,27 @@ describe('plainCounter', () => {
     expect(plainCounter(99)).toEqual([3, 2, 0, 4]);
     expect(plainCounter(100)).toEqual([0, 0, 0, 0]);
     expect(plainCounter(87)).toEqual([3, 1, 0, 2]);
+  });
+});
+
+describe('notSoQuickCounterObj', () => {
+  test('Returns array containing the number of coins equal to the value passed in, in descending order', () => {
+    expect(notSoQuickCounterObj(1)).toEqual([0, 0, 0, 1]);
+    expect(notSoQuickCounterObj(26)).toEqual([1, 0, 0, 1]);
+    expect(notSoQuickCounterObj(41)).toEqual([1, 1, 1, 1]);
+    expect(notSoQuickCounterObj(99)).toEqual([3, 2, 0, 4]);
+    expect(notSoQuickCounterObj(100)).toEqual([0, 0, 0, 0]);
+    expect(notSoQuickCounterObj(87)).toEqual([3, 1, 0, 2]);
+  });
+});
+
+describe('notSoQuickCounterArr', () => {
+  test('Returns array containing the number of coins equal to the value passed in, in descending order', () => {
+    expect(notSoQuickCounterArr(1)).toEqual([0, 0, 0, 1]);
+    expect(notSoQuickCounterArr(26)).toEqual([1, 0, 0, 1]);
+    expect(notSoQuickCounterArr(41)).toEqual([1, 1, 1, 1]);
+    expect(notSoQuickCounterArr(99)).toEqual([3, 2, 0, 4]);
+    expect(notSoQuickCounterArr(100)).toEqual([0, 0, 0, 0]);
+    expect(notSoQuickCounterArr(87)).toEqual([3, 1, 0, 2]);
   });
 });
