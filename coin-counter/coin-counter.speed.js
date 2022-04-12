@@ -1,5 +1,5 @@
 /* eslint-disable */
-import { recursiveCounter, closureCounter, plainCounter } from "./coin-counter.js";
+import { recursiveCounter, closureCounter, plainCounter, notSoQuickCounter } from "./coin-counter.js";
 import { values } from './coin-counter.speed.values.js';
 
 // Use this to gen your values and pipe the output to `coin-counter.speed.values.js`
@@ -38,6 +38,7 @@ const COUNT = 100000;
 const t1 = runIt(recursiveCounter, COUNT);
 const t2 = runIt(closureCounter, COUNT);
 const t3 = runIt(plainCounter, COUNT);
+const t4 = runIt(notSoQuickCounter, COUNT);
 
 console.log(`
 Number of calls: ${COUNT}
@@ -47,4 +48,5 @@ Average time for each call:
   recursiveCounter: ${t1.reduce((p, c) => p + c, 0) / COUNT}
     closureCounter: ${t2.reduce((p, c) => p + c, 0) / COUNT}
       plainCounter: ${t3.reduce((p, c) => p + c, 0) / COUNT}
+ notSoQuickCounter: ${t4.reduce((p, c) => p + c, 0) / COUNT}
 `);

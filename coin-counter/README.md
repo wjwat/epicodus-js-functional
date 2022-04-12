@@ -10,7 +10,7 @@ Ex:
    3, // quarters
    2, // dimes
    0, // nickels
-   4 // pennies
+   4  // pennies
  ]
 ```
 
