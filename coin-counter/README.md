@@ -31,13 +31,41 @@ Ex:
 
 ## Speed Tests
 
-**Number of calls per run**: 100000
+### 1
 
-**Number of values in each call**: 10000
+```Number of calls: 10000
+Number of values in each call: 10000
+Average time for each call:
 
+                        recursiveCounter: 0.4485233507514
+                          closureCounter: 0.2740758302807808
+                            plainCounter: 0.18941594007015228
+                    notSoQuickCounterObj: 0.05887229005098343
+                    notSoQuickCounterArr: 0.06144167050123215
+```
 
-|        | recursiveCounter    | closureCounter      | plainCounter        |
-| ------ | ------------------- | ------------------- | ------------------- |
-| Run 1: | 0.4565629079544544  | 0.2744140979230404  | 0.19207193504095077 |
-| Run 2: | 0.45168512005925177 | 0.2839983238703013  | 0.20247976997613906 |
-| Run 3: | 0.4612077459514141  | 0.27645305890858174 | 0.21394654999613763 |
+### 2
+
+```Number of calls: 10000
+Number of values in each call: 10000
+Average time for each call:
+
+                        recursiveCounter: 0.47651740984916685
+                          closureCounter: 0.27796725041866305
+                            plainCounter: 0.18959232009649277
+                    notSoQuickCounterObj: 0.059504269683361054
+                    notSoQuickCounterArr: 0.06129546015262604
+```
+
+### 3
+
+```Number of calls: 10000
+Number of values in each call: 10000
+Average time for each call:
+
+                        recursiveCounter: 0.45299770065546036
+                          closureCounter: 0.27618342943191526
+                            plainCounter: 0.18775856965780258
+                    notSoQuickCounterObj: 0.058984500133991244
+                    notSoQuickCounterArr: 0.06115396002531052
+```
