@@ -3,7 +3,6 @@ import { romanNumeralsRecursive, romanNumeralsFunctionalRecursive, romanNumerals
 import { values } from "./roman-numerals.speed.values.js";
 
 const runIt = (func, count) => {
-  // Get it hot and ready
   for (let i = 0; i < 5; i++) {
     for (let x = 0; x < values.length; x++) {
       func(values[i]);
@@ -24,21 +23,27 @@ const runIt = (func, count) => {
   return times;
 };
 
-for (let i = 0; i < 5; i++) {
-  const COUNT = 100;
-  const t1 = runIt(romanNumeralsRecursive, COUNT);
-  const t2 = runIt(romanNumeralsFunctionalRecursive, COUNT);
-  const t3 = runIt(romanNumeralsFunctionalRecursive2, COUNT);
-  const t4 = runIt(convertToRoman, COUNT);
+const main = (count, funcs) => {
 
-  console.log(`
-Number of calls: ${COUNT}
-Number of values in each call: ${values.length}
-Average time for each call:
+  console.log(`Number of calls: ${count}`);
+  console.log(`Number of values in each call: ${values.length}`);
+  console.log('Average time for each call:\n');
 
-            romanNumeralsRecursive: ${t1.reduce((p, c) => p + c, 0) / COUNT}
-  romanNumeralsFunctionalRecursive: ${t2.reduce((p, c) => p + c, 0) / COUNT}
- romanNumeralsFunctionalRecursive2: ${t3.reduce((p, c) => p + c, 0) / COUNT}
-                    convertToRoman: ${t4.reduce((p, c) => p + c, 0) / COUNT}
-`);
-}
+  funcs.forEach(f => {
+    const time = runIt(f, count);
+    const average = time.reduce((p, c) => p + c, 0) / count;
+
+    console.log(`${f.name}`.padStart(40) + `: ${average}`);
+  });
+};
+
+const COUNT = 1000;
+const FUNCS = [
+  romanNumeralsRecursive,
+  romanNumeralsFunctionalRecursive,
+  romanNumeralsFunctionalRecursive2,
+  convertToRoman
+]
+
+main(COUNT, FUNCS);
+
