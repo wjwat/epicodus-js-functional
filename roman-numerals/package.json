@@ -1,0 +1,20 @@
+{
+  "name": "roman-numerals",
+  "version": "1.0.0",
+  "description": "",
+  "main": "roman-numerals.js",
+  "type": "module",
+  "scripts": {
+    "test": "jest --coverage",
+    "speed": "node roman-numerals.speed.js"
+  },
+  "author": "Will W. <wjwat@onionslice.org> (https://github.com/wjwat)",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "7.17.9",
+    "@babel/plugin-transform-modules-commonjs": "7.17.9",
+    "eslint": "8.13.0",
+    "eslint-plugin-fp": "2.3.0",
+    "jest": "27.5.1"
+  }
+}
