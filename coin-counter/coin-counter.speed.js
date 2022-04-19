@@ -5,7 +5,7 @@ import { values } from './coin-counter.speed.values.js';
 const runIt = (func, count) => {
   for (let i = 0; i < 5; i++) {
     for (let x = 0; x < values.length; x++) {
-      func(values[i]);
+      func(values[x]);
     }
   }
 
@@ -44,6 +44,6 @@ const FUNCS = [
   plainCounter,
   notSoQuickCounterObj,
   notSoQuickCounterArr
-]
+];
 
 main(COUNT, FUNCS);

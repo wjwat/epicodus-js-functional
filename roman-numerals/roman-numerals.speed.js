@@ -5,7 +5,7 @@ import { values } from "./roman-numerals.speed.values.js";
 const runIt = (func, count) => {
   for (let i = 0; i < 5; i++) {
     for (let x = 0; x < values.length; x++) {
-      func(values[i]);
+      func(values[x]);
     }
   }
 
@@ -43,7 +43,7 @@ const FUNCS = [
   romanNumeralsFunctionalRecursive,
   romanNumeralsFunctionalRecursive2,
   convertToRoman
-]
+];
 
 main(COUNT, FUNCS);
 
